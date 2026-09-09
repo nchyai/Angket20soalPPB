@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angket 20 Soal Pola Pikir Bertumbuh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎯 Angket Pola Pikir Bertumbuh</h1>
+                <p>20 Soal Interaktif untuk Mengukur Mindset Anda</p>
+            </div>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="start-content">
+                <div class="icon-large">🧠</div>
+                <h2>Selamat Datang!</h2>
+                <p>Angket ini dirancang untuk mengukur tingkat pola pikir bertumbuh (Growth Mindset) Anda.</p>
+                
+                <div class="info-box">
+                    <h3>Informasi Quiz:</h3>
+                    <ul>
+                        <li>📝 Total Soal: <strong>20</strong></li>
+                        <li>⏱️ Waktu: <strong>30 Menit</strong></li>
+                        <li>📊 Skor: <strong>Otomatis Dihitung</strong></li>
+                        <li>🎓 Hasil: <strong>Kesimpulan Lengkap</strong></li>
+                    </ul>
+                </div>
+
+                <div class="instructions">
+                    <h3>Petunjuk Pengerjaan:</h3>
+                    <ol>
+                        <li>Baca setiap pertanyaan dengan cermat</li>
+                        <li>Pilih jawaban yang paling sesuai dengan pendapat Anda</li>
+                        <li>Jawaban menggunakan skala 1-5 (Sangat Tidak Setuju - Sangat Setuju)</li>
+                        <li>Tidak ada jawaban benar atau salah</li>
+                        <li>Anda dapat mengubah jawaban sebelum submit</li>
+                    </ol>
+                </div>
+
+                <button class="btn btn-primary" onclick="startQuiz()">Mulai Angket</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span>Soal <span id="currentQuestion">1</span> dari <span id="totalQuestions">20</span></span>
+                    <span id="timer">30:00</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <h3 id="questionText"></h3>
+                
+                <div class="scale-container">
+                    <div class="scale-label">Sangat Tidak Setuju</div>
+                    <div id="answersContainer" class="answers-container"></div>
+                    <div class="scale-label">Sangat Setuju</div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn" style="display: none;">← Sebelumnya</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" id="nextBtn">Berikutnya →</button>
+                    <button class="btn btn-success" onclick="submitQuiz()" id="submitBtn" style="display: none;">Selesai</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <div class="result-header">
+                    <h2>📊 Hasil Angket Anda</h2>
+                    <p id="completionTime"></p>
+                </div>
+
+                <div class="score-box">
+                    <div class="score-circle">
+                        <span id="finalScore">0</span>
+                        <span class="score-max">/100</span>
+                    </div>
+                    <div class="score-info">
+                        <h3 id="scoreCategoryTitle">Kategori</h3>
+                        <p id="scoreCategoryDesc">Deskripsi kategori</p>
+                    </div>
+                </div>
+
+                <div class="result-details">
+                    <h3>📈 Analisis Hasil:</h3>
+                    <div id="analysisContent"></div>
+                </div>
+
+                <div class="recommendation-box">
+                    <h3>💡 Rekomendasi:</h3>
+                    <p id="recommendationText"></p>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="downloadResult()">📥 Download Hasil</button>
+                    <button class="btn btn-primary" onclick="restartQuiz()">🔄 Ulang Angket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Angket Pola Pikir Bertumbuh | Dibuat dengan ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
